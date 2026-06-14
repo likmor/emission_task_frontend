@@ -69,7 +69,7 @@ export const EnergyMixPage = () => {
           {data?.days.map((day) => {
             return (
               <Tabs.Panel key={day.date} value={day.date} pt="md">
-                <SimpleGrid cols={2}>
+                <SimpleGrid cols={{ base: 1, md: 2 }}>
                   <Card
                     shadow="sm"
                     padding="lg"

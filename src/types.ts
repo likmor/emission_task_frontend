@@ -14,3 +14,8 @@ export type DailyMix = {
     other: number;
     cleanEnergyPercentage: number;
 }
+export type ChargingWindowResponseDto = {
+    startTime: string;
+    endTime: string;
+    cleanEnergyPercentage: number;
+}
