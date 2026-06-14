@@ -48,7 +48,7 @@ export const EnergyMixPage = () => {
   if (!data) {
     return (
       <Center py={"lg"}>
-        <Loader color="lime" />
+        <Loader color="lime" data-testid="loader"/>
       </Center>
     );
   }

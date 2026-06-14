@@ -59,7 +59,7 @@ export const ChargingWindowPage = () => {
 
         {isLoading && (
           <Group justify="center">
-            <Loader color="lime" />
+            <Loader color="lime" data-testid="loader"/>
           </Group>
         )}
 
