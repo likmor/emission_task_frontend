@@ -27,7 +27,7 @@ const chartData = (day: DailyMix) => {
     { name: "wind", value: day.wind, color: "teal" },
     { name: "solar", value: day.solar, color: "orange" },
     { name: "other", value: day.other, color: "brown" },
-  ];
+  ].filter((fuel) => fuel.value > 0);
 };
 
 export const EnergyMixPage = () => {
@@ -48,7 +48,7 @@ export const EnergyMixPage = () => {
   if (!data) {
     return (
       <Center py={"lg"}>
-        <Loader color="lime" data-testid="loader"/>
+        <Loader color="lime" data-testid="loader" />
       </Center>
     );
   }
