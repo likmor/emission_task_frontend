@@ -28,7 +28,7 @@ export const ChargingWindowPage = () => {
         `${API_URL}/api/energy-mix/calculate-window`,
         {hours},
       );
-
+      
       setData(response.data);
     } finally {
       setIsLoading(false);
@@ -66,16 +66,16 @@ export const ChargingWindowPage = () => {
         {!isLoading && data && (
           <Card withBorder shadow="sm">
             <Stack gap="md">
-              <Title order={3}>Najlepsze okno ładowania</Title>
+              <Title order={3}>Najlepsze okno ładowania (UTC Time)</Title>
 
               <Group justify="space-between">
                 <Text fw={500}>Start</Text>
-                <Text>{new Date(data.startTime).toLocaleString()}</Text>
+                <Text>{new Date(data.startTime).toLocaleString(undefined, {timeZone: 'UTC'})}</Text>
               </Group>
 
               <Group justify="space-between">
                 <Text fw={500}>Koniec</Text>
-                <Text>{new Date(data.endTime).toLocaleString()}</Text>
+                <Text>{new Date(data.endTime).toLocaleString(undefined, {timeZone: 'UTC'})}</Text>
               </Group>
 
               <Group justify="space-between">
